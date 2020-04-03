@@ -1,0 +1,16 @@
+{% extends 'solarpv/index.html' %}
+{% block title %}<title>Login!</title>{% endblock %}
+{% block main %}
+<div class="main">
+    <form method="post" enctype="multipart/form-data">
+        <h3 class="text-center">User Login</h3>
+        <table class="m-auto">
+            <tr><td>Username</td><td><input name="uName" type="text" placeholder="required"></td></tr>
+            <tr><td>Password</td><td><input name="uPass" type="password" placeholder="required"></td></tr>
+        </table>            
+        <div class="p-3" style="text-align: center;"><button value="Submit" name="login">Login</button></div>
+    </form>
+    <div id="result"></div>
+</div>
+{% endblock %}
+    

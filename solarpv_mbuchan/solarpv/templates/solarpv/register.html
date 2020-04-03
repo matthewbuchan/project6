@@ -1,0 +1,21 @@
+{% extends 'solarpv/index.html' %}
+{% block title %}<title>Registration</title>{% endblock %}
+{% block main %}
+<div class="main">
+    <form method="post" enctype="multipart/form-data">
+        <h3 class="text-center">User Registration Form</h3>
+        <table class="m-auto">
+            <tr><td class="flabel">Username</td><td class="ffield"><input name="uName" type="text" placeholder="required" autocomplete="username"></td></tr>
+            <tr><td class="flabel">Password</td><td class="ffield"><input name="uPass" type="password" placeholder="required" autocomplete="current-password"></td></tr>
+            <tr><td class="flabel">First name</td><td class="ffield"><input name="fName" type="text"></td></tr>
+            <tr><td class="flabel">Middle name</td><td class="ffield"><input name="mName" type="text"></td></tr>
+            <tr><td class="flabel">Last name</td><td class="ffield"><input name="lName" type="text"></td></tr>
+            <tr><td class="flabel">Address</td><td class="ffield"><input name="uAddr" type="text"></td></tr>
+            <tr><td class="flabel">Office Phone number</td><td class="ffield"><input name="oPhone" type="tel"></td></tr>
+            <tr><td class="flabel">Cell Phone number</td><td class="ffield"><input name="cPhone" type="tel"></td></tr>
+            <tr><td class="flabel">Email</td><td class="ffield"><input name="uEmail" type="text"></td></tr>
+        </table>
+        <div class="p-3" style="text-align: center;"><button value="Submit" name="register">Register</button></div>
+    </form>
+</div>
+{% endblock %}

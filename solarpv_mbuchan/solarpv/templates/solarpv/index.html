@@ -9,14 +9,15 @@
     <link rel="stylesheet" href="{% static 'solarpv/style.css' %}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="{% static 'solarpv/pageScript.js' %}"></script>    
-    <title>Welcome to SolarPV</title>
+    {% block title %}<title>Welcome to SolarPV</title>{% endblock %}
 </head>
 <body>
     <div class="wrapper">
+        {% block head %} 
         <div class="head">
             <div class='hpanel'>
                 <div class="hgrid">
-                    <div><a href="./index.php"><img src="{% static 'solarpv/Logo.gif' %}" style="height: 90px;" alt="Company Logo"></a></div>
+                    <div><a href="{% url 'index' %}"><img src="{% static 'solarpv/Logo.gif' %}" style="height: 90px;" alt="Company Logo"></a></div>
                     <div class="rpanel">
                         <div class="navlinks links"><a href="./aboutus.html">About Us</a> | <a href="./contactus.html">Contact Us</a></div>
                         <div class="navlinks social" style="bottom: 0;"><img style="height: 75px;" src="{% static 'solarpv/socialmedia.gif' %}" alt=""></div>
@@ -24,12 +25,13 @@
                 </div>
             </div>
         </div>
+        {% endblock %}
         <div class="marqbar">
             <marquee behavior="scroll" direction="left">Racks & Trackers * PV Module * PV Systems * Data Analytics * Cybersecurity</marquee>
         </div>
         <div class="sidebar" id="sidebar">
             <div class="titleRow">
-                <a href="register.php">Register</a> | <a href="login.php\">Login</a></tr>
+                <a href="{% url 'register' %}">Register</a> | <a href="{% url 'login' %}">Login</a></tr>
                 
             </div>
             <div class="titleCat">PV Module</div>
@@ -52,12 +54,14 @@
             <div class="titleCat">Cybersecurity and Smart Grid Technologies</div>
             <div class="titleCat">Solar PV University</div>
         </div>           
-            
+        
+        {% block main %}
         <div class="main">
             Feature Contents
             <br>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Zu6oly462_w?&showinfo=0&controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" autoplay></iframe>
         </div>
+        {% endblock %}
 
         <div class="newsbar" id="newsbar">
             <div class="titleRow">News & Events</div>

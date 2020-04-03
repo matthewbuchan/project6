@@ -5,3 +5,9 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'solarpv/index.html')
     #return HttpResponse('Hi index!!')
+
+def register(request):
+    return render(request, 'solarpv/register.html')
+
+def login(request):
+    return render(request, 'solarpv/login.html')
