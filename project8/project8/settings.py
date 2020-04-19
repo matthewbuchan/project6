@@ -25,13 +25,16 @@ SECRET_KEY = 'pn$o%l%i*#b7sb077s7_*twu#c4!+wxtay8@0vi@g*9fd5)$lz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.100.254'
+]
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'courses',
+    'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,6 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+REST_FRAMEWORK = { 
+'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly' 
+]
+}
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
