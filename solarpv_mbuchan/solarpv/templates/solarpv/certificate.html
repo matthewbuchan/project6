@@ -1,0 +1,23 @@
+{% extends 'solarpv/index.html' %}
+{% block title %}<title>Certificate Search</title>{% endblock %}
+{% block main %}
+<div class="main">
+    <form method="post" enctype="multipart/form-data">
+        <h3 class="text-center">Certificate Search</h3>
+        <table class="m-auto">
+            <tr><td>Please enter a full or partial certificate number:</td></tr>
+            <tr><td><input name="searchBox" type="text" placeholder="required"></td></tr>
+        </table>            
+        <div class="p-3" style="text-align: center;"><button value="Submit" name="search">Search</button></div>
+    </form>
+    <div>
+        <ul>
+            {% for certificate in certificate_list %}
+            <li>{{ certificate.text}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="result"></div>
+</div>
+{% endblock %}
+    

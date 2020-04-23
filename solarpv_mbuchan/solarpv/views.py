@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import TestSequence, Product, Client, TestStandard, Location, User, Certificate, Service, PerformanceData
+
 
 # Create your views here.
 def index(request):
@@ -11,3 +12,10 @@ def register(request):
 
 def login(request):
     return render(request, 'solarpv/login.html')
+
+def certificate(request):
+    certificate_list = Certificate.objects.order_by('issuedate')
+
+    context = {'certificate_list' : certificate_list}
+
+    return render(request, 'solarpv/certificate.html', context)
