@@ -46,11 +46,11 @@ class Location(models.Model):
     country = models.CharField(max_length=35)
     phonenumber = models.CharField(max_length=35)
     faxnumber = models.CharField(max_length=35)
-    clientid = models.ForeignKey(Client, on_delete=models.CASCADE)
+    clientid = models.CharField(max_length=35)
 
 class User(models.Model):
     username = models.CharField(max_length=35)
-    clientid = models.ForeignKey(Client, on_delete=models.CASCADE)
+    clientid = models.CharField(max_length=35)
     firstname = models.CharField(max_length=35)
     lastname = models.CharField(max_length=35)
     middlename = models.CharField(max_length=35)
@@ -61,12 +61,12 @@ class User(models.Model):
     appellation = models.CharField(max_length=10)
 
 class Certificate(models.Model):
-    userid = models.ForeignKey(User, on_delete=models.CASCADE)
+    userid = models.CharField(max_length=35)
     reportnumber = models.CharField(max_length=35)
     issuedate = models.CharField(max_length=35)
-    standardid = models.ForeignKey(TestStandard, on_delete=models.CASCADE)
-    locationid = models.ForeignKey(Location, on_delete=models.CASCADE)
-    modelnumber = models.ForeignKey(Product, on_delete=models.CASCADE)
+    standardid = models.CharField(max_length=35)
+    locationid = models.CharField(max_length=35)
+    modelnumber = models.CharField(max_length=35)
     
 
 class Service(models.Model):
@@ -74,11 +74,11 @@ class Service(models.Model):
     description = models.CharField(max_length=35)
     isfirequired = models.CharField(max_length=35)
     fifrequency = models.CharField(max_length=35)
-    standardid = models.ForeignKey(TestStandard, on_delete=models.CASCADE)
+    standardid = models.CharField(max_length=35)
 
 class PerformanceData(models.Model):
-    modelnumber = models.ForeignKey(Product, on_delete=models.CASCADE)
-    sequenceid = models.ForeignKey(TestSequence, on_delete=models.CASCADE)
+    modelnumber = models.CharField(max_length=35)
+    sequenceid = models.CharField(max_length=35)
     maxsystemvoltage = models.CharField(max_length=35)
     voc = models.FloatField()
     isc = models.FloatField()
