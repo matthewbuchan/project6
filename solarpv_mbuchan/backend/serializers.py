@@ -36,12 +36,14 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['firstname','lastname','middlename','jobtitle','email','officephone','cellphone','prefix','clientid']
+        
 
 class CertificateSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Certificate
+        model = Certificate        
         fields = ['userid','reportnumber','issuedate','standardid','locationid','modelnumber']
+
 
 class ServiceSerializer(serializers.ModelSerializer):
 

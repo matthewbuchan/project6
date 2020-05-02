@@ -60,6 +60,10 @@ class User(models.Model):
     cellphone = models.CharField(max_length=35)
     appellation = models.CharField(max_length=10)
 
+    def __str__(self):
+        return self.username
+    
+
 class Certificate(models.Model):
     userid = models.CharField(max_length=35)
     reportnumber = models.CharField(max_length=35)
@@ -67,6 +71,9 @@ class Certificate(models.Model):
     standardid = models.CharField(max_length=35)
     locationid = models.CharField(max_length=35)
     modelnumber = models.CharField(max_length=35)
+    
+    def __str__(self):
+        return self.userid
     
 
 class Service(models.Model):

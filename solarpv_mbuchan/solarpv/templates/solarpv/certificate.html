@@ -1,23 +1,50 @@
 {% extends 'solarpv/index.html' %}
 {% block title %}<title>Certificate Search</title>{% endblock %}
 {% block main %}
-<div class="main">
-    <form method="post" enctype="multipart/form-data">
+<div class="main m-auto">
+    <style>
+        table, th, td{
+            border: 1px solid black;
+        }
+    </style>
+    <form method="GET" enctype="multipart/form-data">
         <h3 class="text-center">Certificate Search</h3>
-        <table class="m-auto">
-            <tr><td>Please enter a full or partial certificate number:</td></tr>
-            <tr><td><input name="searchBox" type="text" placeholder="required"></td></tr>
-        </table>            
+        <h6>Please enter a full or partial certificate number:</h6>
+        {{filter.form}}
+        
+            
+            <!-- <tr><td><input name="searchBox" type="text" placeholder="required"></td></tr> -->
+            
+        
         <div class="p-3" style="text-align: center;"><button value="Submit" name="search">Search</button></div>
     </form>
-    <div>
-        <ul>
-            {% for certificate in certificate_list %}
-            <li>{{ certificate.text}}</li>
+    <br><br>
+    <h4>Certificate Listing</h4>
+    <div class="m-auto">
+        <table>
+            <tr>
+                <td>Certificate ID</td>
+                <td>UserID</td>
+                <td>Report No.</td>
+                <td>Issue Date</td>
+                <td>Standard ID</td>
+                <td>Location ID</td>
+                <td>Model No.</td>
+            </tr>
+            {% for certificate in filter.qs %}
+            <tr>
+                <td>{{ certificate.id }}</td>
+                <td>{{ certificate.userid }}</td>
+                <td>{{ certificate.reportnumber }}</td>
+                <td>{{ certificate.issuedate }}</td>
+                <td>{{ certificate.standardid }}</td>
+                <td>{{ certificate.locationid }}</td>
+                <td>{{ certificate.modelnumber }}</td>
+            </tr>
             {% endfor %}
-        </ul>
+        </table>
     </div>
-    <div id="result"></div>
+    
 </div>
 {% endblock %}
     

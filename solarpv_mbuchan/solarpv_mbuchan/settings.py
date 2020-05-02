@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
 INSTALLED_APPS = [     
     'backend', 
     'solarpv',
+    'django_filters',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
