@@ -13,6 +13,7 @@ router.register('Certificate',views.CertificateView)
 router.register('Service',views.ServiceView)
 router.register('PerformanceData',views.PerformanceDataView)
 
+
 urlpatterns = [
-    path('API/', include(router.urls))
+    path('API/', include(router.urls), name='API')
     ]
