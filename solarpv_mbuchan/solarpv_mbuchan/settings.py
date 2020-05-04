@@ -23,17 +23,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'se+4r9jq%09^5e6i)x_+)eq7h3r1($g9)dvqgckl(r7a9li#if'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
-    '192.168.100.254'
+    'ttakaha1.pythonanywhere.com'
     ]
 
 
 # Application definition
 
-INSTALLED_APPS = [     
-    'backend', 
+INSTALLED_APPS = [
+    'backend',
     'solarpv',
     'django_filters',
     'rest_framework',
@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'solarpv_mbuchan.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'solarpv',
-        'HOST' : 'localhost',
-        'USER' : 'root',
-        'PASSWORD' : 'password',
+        'NAME': 'ttakaha1$solarpv',
+        'HOST' : 'ttakaha1.mysql.pythonanywhere-services.com',
+        'USER' : 'ttakaha1',
+        'PASSWORD' : 'P@$$w0rd',
         'PORT' : '3306'
     }
 }
@@ -128,3 +128,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/home/ttakaha1/project6/solarpv_mbuchan/static'

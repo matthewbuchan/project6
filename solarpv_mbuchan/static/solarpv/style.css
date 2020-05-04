@@ -1,0 +1,85 @@
+html,body{
+    height: 100%;
+}
+.wrapper{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 250px auto 250px;
+    grid-template-rows: 150px 24px auto 105px;
+    grid-template-areas:
+    "header header header"
+    "marqbar marqbar marqbar"
+    "sidebar main newsbar"
+    "footer footer footer";
+}
+.head{
+    grid-area: header;    
+}
+.marqbar{
+    grid-area: marqbar;
+}
+.sidebar{
+    grid-area: sidebar;
+    padding: 1em;
+}
+.main{
+    grid-area: main; 
+    text-align: center;
+}
+.newsbar{
+    grid-area: newsbar;
+    padding: 1em;
+}
+.foot{
+    grid-area: footer;    
+}
+.titleCat{
+    font-weight: bold;
+}
+.titleRow, .titleRow > a:any-link{
+    color: crimson;            
+    text-align: center;
+    font-weight: bold;
+    height: 2em;
+}
+.newsbar > div{
+    padding: 1em;
+}
+.flabel{
+    text-align: right;
+    padding-right: 1em;
+    padding-left: 1em;
+}
+.ffield{
+    text-align: center;
+    padding-right: 2em;
+    padding-left: 2em;
+}
+.hpanel{
+    width: 100%;
+    height: 100%;
+    background-image: url("/static/solarpv/banner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1em;
+}
+.hgrid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.rpanel > div{    
+    text-align: right;
+    -webkit-text-stroke: .5px white;
+}
+.fpanel{
+    z-index: 2;
+    background-color: rgba(255, 255, 255,1);
+    width: 100%;
+    border-top: 1px solid black;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+}
+.fgrid{
+    grid-template-columns: 50% 50%;
+}
